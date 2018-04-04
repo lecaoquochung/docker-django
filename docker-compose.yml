@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  django:
+    image: lecaoquochung/docker-django:latest
+    volumes:
+        - ./:/code
+  
+  django_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /code
+    volumes:
+      - ".:/code"
+    command: python3 manage.py runserver 0.0.0.0:8083
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres
+      - mysql
