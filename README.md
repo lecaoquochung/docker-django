@@ -1,4 +1,4 @@
-# liho-docker-image-php-fpm
+# docker-python
 Docker image for [DJANGO](https://www.djangoproject.com/).
 
 ## Supported branches and respective Dockerfile links
